@@ -12,6 +12,23 @@ const router = createRouter({
             name: 'Register', 
             component: () => import("@/pages/Register.vue")
         },
+        {
+            path: '/module',
+            name: 'SelectModule',
+            component: () => import("@/pages/SelectModule.vue")
+        },
+        {
+            path: '/addition',
+            name: 'AdditionPage',
+            component: () => import("@/pages/AdditionPage.vue")
+        },
+        {
+            path: '/subtraction',
+            name: 'SubtractionPage',
+            component: () => import("@/pages/SubtractionPage.vue")
+        }
+
+        
     ],
 
     history: createWebHistory(),
