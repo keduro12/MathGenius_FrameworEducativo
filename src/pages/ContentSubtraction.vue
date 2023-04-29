@@ -2,11 +2,10 @@
     <div>
         <h1>{{title}}</h1>
         <p>{{body}}</p>
-        <p>{{body_2}}</p>
         <div class="imagen">
             <img :src="url">
         </div>
-        
+        <p>{{body_2}}</p>
     </div>
 </template>
 
@@ -38,17 +37,19 @@ h1 {
         font-weight: 400;
         font-size: 40px;
         line-height: 46px;
+        text-align: center;
+        /* border: solid red 1px; */
         /* identical to box height */
 
-        display: flex;
-        align-items: center;
-        text-align: center;
+        /* display: flex; */
+        /* align-items: center;
+        text-align: center; */
 
         color: #000000;
 
         margin-left: 10%;
         margin-right: 10%;
-        padding-top: 5%;
+        padding-top: 2%;
     }
 
     img {
@@ -61,4 +62,5 @@ h1 {
     .imagen {
         text-align: center;
     }
+
 </style>

@@ -11,11 +11,11 @@ html, body {
     position: absolute;
     width: 127px;
     height: 81px;
-    left: 32px;
-    top: 26px;
+    left: 2%;
+    top: 2%;
     font-family: 'Lilita One';
-    background: #DE8686;
-    border-bottom: 6px solid #A23F3F;
+    background: #03A9F4;
+    border-bottom: 6px solid #01579b;
     border-radius: 15px;
     border-right-style: none;
     border-left-style: none;
@@ -34,13 +34,13 @@ html, body {
     /* display: flex; */
     /* justify-content: center; */
     position: fixed;
-    width: 403px;
+    width: 127px;
     height: 81px;
-    right: 1%;
-    bottom: 50%;
+    right: 2%;
+    bottom: 2%;
 
-    background: #DE8686;
-    border-bottom: 6px solid #A23F3F;
+    background: #03A9F4;
+    border-bottom: 6px solid #01579b;
     border-radius: 15px;
     border-right-style: none;
     border-left-style: none;
@@ -57,6 +57,34 @@ html, body {
     color: #FFFFFF;
 }
 
+.quiz {
+    /* display: flex; */
+    /* justify-content: center; */
+    position: fixed;
+    width: 127px;
+    height: 81px;
+    right: 2%;
+    top: 2%;
+
+    background: #03A9F4;
+    border-bottom: 6px solid #01579b;
+    border-radius: 15px;
+    border-right-style: none;
+    border-left-style: none;
+    border-top-style: none;
+
+    font-family: 'Lilita One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 27px;
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
 .boton-siguiente{
     float: right;
     width: 50%;
@@ -66,21 +94,31 @@ html, body {
 }
 
 .next:hover{
-    background: #ca7070;
-    border-bottom: 6px solid #DE8686;
+    background: #01579b;
+    border-bottom: 6px solid #03A9F4;
 }
 
 .next:active{
-    background: #DE8686;
-    border-bottom: 6px solid #ca7070;
+    background: #03A9F4;
+    border-bottom: 6px solid #01579b;
 }
 
 .back:hover{
-    background: #ca7070;
-    border-bottom: 6px solid #DE8686;
+    background: #01579b;
+    border-bottom: 6px solid #03A9F4;
 }
 
 .back:active{
-    background: #DE8686;
-    border-bottom: 6px solid #ca7070;
+    background: #03A9F4;
+    border-bottom: 6px solid #01579b;
+}
+
+.quiz:hover{
+    background: #01579b;
+    border-bottom: 6px solid #03A9F4;
+}
+
+.quiz:active{
+    background: #03A9F4;
+    border-bottom: 6px solid #01579b;
 }

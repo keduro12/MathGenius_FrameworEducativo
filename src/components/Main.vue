@@ -5,7 +5,7 @@
           <h3>¡La forma mas divertida, efectiva y gratis de aprender sobre Matematicas 3°!</h3>
         </span>
         <div class="myboton">
-          <router-link to="/main" :style="{'text-decoration' : 'none','height':'81px'}"><button type="button"
+          <router-link to="/module" :style="{'text-decoration' : 'none','height':'81px'}"><button type="button"
               class="beginBoton">EMPIEZA AHORA</button>
           </router-link>
   
@@ -13,11 +13,18 @@
               class="beginBoton boton-space">CALIFICACIONES</button>
           </router-link>
         </div>
+        <div>
+            <button class="back aa" @click="userStore.finishSesion()">Salir</button>
+        </div>
       </div>
+
     </div>
   </template>
 
 <script setup>
+import {useUserStore} from "@/store/User.js"
+
+const userStore = useUserStore()
 
 </script>
 
@@ -33,6 +40,12 @@ h1 {
     font-family: 'Luckiest Guy', cursive;
     font-size: 48px;
     text-align: center;
+}
+
+.aa{
+    width: 127px;
+    right: 2%;
+    top: 2%;
 }
 
 h3 {

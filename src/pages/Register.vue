@@ -61,7 +61,7 @@
         margin: 10px 10px;
 
         background: #E1F5FE;
-        border-radius: 50px;
+        border-radius: 15px;
         border: none;
     }
 
@@ -77,7 +77,7 @@
         height: 64px;
 
         background: #0277BD;
-        border-radius: 50px;
+        border-radius: 15px;
         border: none;
     }
 

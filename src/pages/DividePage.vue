@@ -1,18 +1,15 @@
 <template>
     <div class="aaa">
 
-        <ContentAddition v-for="(item, index) in sumar.slice(inicio, final)" 
+        <ContentDivide v-for="(item, index) in dividir.slice(inicio, final)" 
         :title="item.title" 
         :body="item.body"
         :body_2="item.body_2"
         :url="item.url"
-        ></ContentAddition>
+        ></ContentDivide>
 
-        <div v-if="final == 7">
-            <Quiz></Quiz>
-        </div>
         <div>
-            <button class="next" v-on:click="siguiente" v-if="final != 7">Siguiente</button>
+            <button class="next" v-on:click="siguiente">Siguiente</button>
             <button class="back" v-on:click="atras">Atras</button>
 
         </div>
@@ -20,14 +17,13 @@
 </template>
 
 <script setup>
-import ContentAddition from "@/pages/ContentAddition.vue";
-import Quiz from "@/components/Quiz.vue";
-import Suma from "@/content/Modulos.js"
+import ContentDivide from "@/pages/ContentDivide.vue";
+import Division from "@/content/Modulos.js"
 
 import {ref} from "vue"
 import { useRouter } from "vue-router";
 
-const sumar = Suma.Suma;
+const dividir = Division.Division;
 
 const router = useRouter();
 
@@ -35,9 +31,10 @@ const router = useRouter();
     const final = ref(1);
 
     const siguiente = () => {
+
         inicio.value++;
         final.value++
-        if (inicio.value == 7 && final.value == 8) {
+        if (inicio.value == 8 && final.value == 9) {
             router.push('/module');
         }
     }
@@ -47,7 +44,7 @@ const router = useRouter();
         final.value--;
 
         if (inicio.value == -1 && final.value == 0) {
-            router.push('/module');
+            router.push('/knowbody');
         }
     }
 </script>

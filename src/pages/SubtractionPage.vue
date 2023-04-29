@@ -1,28 +1,16 @@
 <template>
-    <div>
+    <div class="aaa">
 
-        <ContentSubtraction v-for="(item, index) in resta.slice(inicio, final)" 
+        <ContentSubtraction v-for="(item, index) in restar.slice(inicio, final)" 
         :title="item.title" 
         :body="item.body"
         :body_2="item.body_2"
         :url="item.url"
         ></ContentSubtraction>
-        <!-- <h1>Suma</h1> -->
-        <!-- {{ sumar }} -->
-        <!-- <div v-for="item in sumar">
-            <div>
-                {{ item }}
-            </div>
-        </div> -->
 
         <div>
             <button class="next" v-on:click="siguiente">Siguiente</button>
             <button class="back" v-on:click="atras">Atras</button>
-            <!-- <button type="button" class="nada">
-                <img src="@/assets/derecha.png" alt="">
-            </button>
-
-            <img src="@/assets/derecha.png" alt="" @click="atras" class="nada"> -->
 
         </div>
     </div>
@@ -35,7 +23,7 @@ import Resta from "@/content/Modulos.js"
 import {ref} from "vue"
 import { useRouter } from "vue-router";
 
-const resta = Resta.Resta;
+const restar = Resta.Resta;
 
 const router = useRouter();
 
@@ -46,8 +34,8 @@ const router = useRouter();
 
         inicio.value++;
         final.value++
-        if (inicio.value == 13 && final.value == 14) {
-            router.push('/main');
+        if (inicio.value == 7 && final.value == 8) {
+            router.push('/module');
         }
     }
 
@@ -56,21 +44,13 @@ const router = useRouter();
         final.value--;
 
         if (inicio.value == -1 && final.value == 0) {
-            router.push('/knowbody');
+            router.push('/module');
         }
     }
 </script>
 
 <style scoped>
-
-.nada{
-    background: #81d4fa;
-    width: 80px;
-    
-    /* border: none */
-}
-
-.nada:hover{
-    background: white;
-}
+/* .aaa{
+    border: 1px solid red;
+} */
 </style>
