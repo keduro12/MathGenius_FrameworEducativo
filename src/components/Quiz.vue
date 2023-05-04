@@ -109,6 +109,18 @@
 import {ref} from "vue"
 import Swal from "sweetalert2"
 
+
+// const props= defineProps({
+//     entrada: {
+//         type: Array,
+//         defaul: () => {},
+//     },
+//     imagenes:{
+//         type: Array,
+//         defaul: () => {},
+//     }
+// })
+
 const Toast = Swal.mixin({
     toast: true,
     position: 'bottom',
@@ -133,6 +145,21 @@ const Toast = Swal.mixin({
     const entrada_9 = ref()
     const entrada_10 = ref()
 
+    const ramdom = ref()
+    const aleatorio = ref([])
+
+
+
+    for (let index = 0; index < 10; index++) {
+
+        ramdom.value = Math.floor(Math.random() * (0 - 1000) + 1000);
+        aleatorio.value.push(ramdom.value)
+        console.log(aleatorio.value)
+    
+    }
+
+    console.log(aleatorio.value + "esto e slo aleatorio")
+
     const suma_1 = 645;
     const suma_2 = 1306;
     const suma_3 = 933;
@@ -143,7 +170,6 @@ const Toast = Swal.mixin({
     const suma_8 = 786;
     const suma_9 = 969;
     const suma_10 = 361;
-
 
     const validar = () =>{
         if(entrada_1.value == suma_1 && entrada_2.value == suma_2 &&  entrada_3.value == suma_3 && entrada_4.value == suma_4 && entrada_5.value == suma_5 && entrada_6.value == suma_6 && entrada_7.value == suma_7 && entrada_8.value == suma_8 && entrada_9.value == suma_9 && entrada_10.value == suma_10){

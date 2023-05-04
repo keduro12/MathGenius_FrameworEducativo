@@ -3,27 +3,27 @@
         <div class="card text-center ancho">
             <div class="card-body">
                 <span class="span-title"> Register</span>
-                <form action="">
+                <form action="" @submit.prevent="handleSubmit">
                     <span>
-                        <input type="text" placeholder="Nombre" class="input-class">
+                        <input type="text" placeholder="Nombre" class="input-class" v-model.trim="name">
                     </span>
                     <span>
-                        <input type="text" placeholder="Apellido" class="input-class">
+                        <input type="text" placeholder="Apellido" class="input-class" v-model.trim="lastName">
                     </span>
                     <span>
-                        <select name="Rol" class="input-class">
+                        <select name="Rol" class="input-class" v-model.trim="rol">
                             <option value="estudiante">Estudiante</option>
                             <option value="docente">Docente</option>
                         </select>
                     </span>
                     <span>
-                        <input type="email" placeholder="Email" class="input-class">
+                        <input type="email" placeholder="Email" class="input-class" v-model.trim="email">
                     </span>
                     <span>
-                        <input type="password" placeholder="Contraseña" class="input-class">
+                        <input type="password" placeholder="Contraseña" class="input-class" v-model.trim="password">
                     </span>
                     <span>
-                       <button class="boton-class">Registrar</button>
+                       <button class="boton-class" @click="RegisterUser">Registrar</button>
                     </span>
                 </form>
             </div>
@@ -32,6 +32,23 @@
 </template>
 
 <script setup>
+import {ref} from "vue"
+import {useUserStore} from "@/store/User.js"
+
+
+const useUser = useUserStore();
+
+const name = ref();
+const lastName = ref();
+const email = ref();
+const password = ref();
+const rol = ref();    
+
+const RegisterUser = async () =>{
+    const imprmir = await useUser.registerUser(email.value, lastName.value, name.value, password.value, rol.value)
+
+    console.log(email.value);
+}
 
 </script>
 

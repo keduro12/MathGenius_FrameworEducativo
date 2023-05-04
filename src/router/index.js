@@ -10,6 +10,12 @@ const requireAuth = async(to, from, next) =>{
     }else{
         next("/login")
     }
+
+    // if(user){
+    //     if(useUser.roles == 'docente'){
+    //         next("/addition");
+    //     }
+    // }
     
 
 

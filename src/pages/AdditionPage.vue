@@ -23,11 +23,15 @@
 import ContentAddition from "@/pages/ContentAddition.vue";
 import Quiz from "@/components/Quiz.vue";
 import Suma from "@/content/Modulos.js"
+import Imagenes from "@/content/imagenesSuma.js"
 
-import {ref} from "vue"
+import {ref, reactive} from "vue"
 import { useRouter } from "vue-router";
 
 const sumar = Suma.Suma;
+const imagenes = Imagenes.Imagenes;
+
+console.log(imagenes)
 
 const router = useRouter();
 
@@ -50,6 +54,8 @@ const router = useRouter();
             router.push('/module');
         }
     }
+
+    // const entrada = ref([]);
 </script>
 
 <style scoped>

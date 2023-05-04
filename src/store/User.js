@@ -2,14 +2,15 @@ import { defineStore } from "pinia";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged  } from "firebase/auth";
 import { auth, db } from "@/firebaseConfig";
 import router from "@/router";
-import { doc, getDoc, setDoc } from "firebase/firestore/lite";
+import { addDoc, doc, getDoc, setDoc, collection } from "firebase/firestore/lite";
 
 
 export const useUserStore = defineStore('user', {
     state: () => ({
         userData: null,
+        userDataFirestore: null,
         curentUser: null,
-        aemail: null,
+        roles: null
     }),
 
     getters: {
@@ -17,17 +18,31 @@ export const useUserStore = defineStore('user', {
     },
 
     actions: {
-        async registerUser(email, password) {
+        async registerUser(email, lastName, name, password,  rol) {
             try {
                 const createUser = await createUserWithEmailAndPassword(auth, email, password)
                 const respuesta = createUser.user
+
+                console.log(respuesta);
 
                 this.userData = {
                     email: respuesta.email,
                     uid: respuesta.uid
                 }
 
-                router.push("login")
+                const objectDoc = {
+                    email: email,
+                    lastName: lastName,
+                    name: name,
+                    rol: rol,
+                }
+
+                const docRef  = doc(db, `usuarios/${respuesta.uid}`)
+                setDoc(docRef, objectDoc)
+
+                
+
+                router.push("/login")
 
 
             } catch (error) {
@@ -39,11 +54,13 @@ export const useUserStore = defineStore('user', {
 
         async setUser(user){
             try {
-                const docRef = doc(db, "users", user.uid);
+                const docRef = doc(db, `usuarios/${user.uid}`);
 
                 this.userData = {
                     email: user.email,
-                    uid: user.uid,
+                    lastName: user.lastName,
+                    name: user.name,
+                    rol: user.rol,
                 }
 
 
@@ -98,17 +115,20 @@ export const useUserStore = defineStore('user', {
                     console.log(this.userData)
                     if (user) {
                         await this.setUser(user)
+
+                        const docRef = doc(db, `usuarios/${user.uid}`)
+                        const docSnap = await getDoc(docRef);
+                        const final = docSnap.data().rol;
                         this.userData = {
                             email: user.email,
                             uid: user.uid,
-                            displayName: user.displayName,
-                            photoURL: user.photoURL
+                            rol: final
+                            // displayName: user.displayName,
+                            // photoURL: user.photoURL
                         };
-
-                        this.aemail = this.userData.email;
-                        this.adisplayName = this.userData.displayName;
-                        this.aphotoURL = this.userData.photoURL;
-                        console.log(this.userData)
+                        this.roles = this.userData.rol
+                        console.log(this.userData.rol)
+                        console.log(this.roles)
                     } else {
                         this.userData = null;
                         console.log(this.userData)

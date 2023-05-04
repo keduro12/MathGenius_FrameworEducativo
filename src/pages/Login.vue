@@ -1,32 +1,49 @@
 <template>
-    <div class="centrar">
-        <div class="card text-center ancho">
-            <div class="card-body">
-                <span class="span-title">Iniciar Sesión</span>
-                <form action="">
-                    <span>
-                        <input type="email" placeholder="Correo" class="input-class separar" v-model.trim="formData.email">
-                        <span class="letra" v-for="error in v$.email.$errors">{{ error.$message }}</span>
-                    </span>
-                    <span>
-                        <input type="password" placeholder="Contraseña" class="input-class" v-model.trim="formData.password">
-                        <span class="letra" v-for="error in v$.password.$errors">{{ error.$message }}</span>
-                    </span>                   
-                </form>
-                <div class="contenedor-boton">
-                    <button @click="handleSubmit()" class="boton-class">Ingresar</button>
-                </div>
-            </div>
+  <div class="centrar">
+    <div class="card text-center ancho">
+      <div class="card-body">
+        <span class="span-title">Iniciar Sesión</span>
+        <form action="">
+          <span>
+            <input type="email" placeholder="Correo" class="input-class separar" v-model.trim="formData.email">
+            <span class="letra" v-for="error in v$.email.$errors">{{ error.$message }}</span>
+          </span>
+          <span>
+            <input type="password" placeholder="Contraseña" class="input-class" v-model.trim="formData.password">
+            <span class="letra" v-for="error in v$.password.$errors">{{ error.$message }}</span>
+          </span>
+        </form>
+        <div class="contenedor-boton">
+          <button @click="handleSubmit()" class="boton-class">Ingresar</button>
         </div>
+        <RouterLink to="/register">hola </RouterLink>
+      </div>
+
     </div>
+
+
+
+    
+  </div>
 </template>
 
 <script setup>
   import Swal from "sweetalert2"
-  import {useUserStore} from "@/store/User.js"
-  import { useVuelidate } from '@vuelidate/core'
-  import { reactive } from 'vue'
-  import {required ,helpers ,minLength ,email } from '@vuelidate/validators'
+  import {
+    useUserStore
+  } from "@/store/User.js"
+  import {
+    useVuelidate
+  } from '@vuelidate/core'
+  import {
+    reactive
+  } from 'vue'
+  import {
+    required,
+    helpers,
+    minLength,
+    email
+  } from '@vuelidate/validators'
 
 
 
@@ -111,24 +128,24 @@
 </script>
 
 <style scoped>
-.ancho {
+  .ancho {
     width: 450px;
     height: 700px;
 
     background: #03A9F4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-}
+  }
 
-.centrar {
+  .centrar {
 
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-}
+  }
 
-.input-class{
+  .input-class {
     position: relative;
     width: 350px;
     height: 64px;
@@ -137,21 +154,21 @@
     background: #E1F5FE;
     border-radius: 15px;
     border: none;
-}
+  }
 
-.separar{
+  .separar {
     margin-top: 80px;
-}
+  }
 
-.contenedor-boton{
+  .contenedor-boton {
     position: relative;
     text-align: center;
     /* border: 1px solid red; */
     height: 40vh;
-}
+  }
 
 
-.boton-class{
+  .boton-class {
     position: absolute;
     color: #E1F5FE;
     font-family: 'Inter';
@@ -168,48 +185,55 @@
     background: #0277BD;
     border-radius: 15px;
     border: none;
-}
+  }
+/* 
+  .ap{
+    text-align: center;
+    left: 50%;
+    bottom: 50%;
+    border: solid 1px red;
+  } */
 
-input{
+  input {
     color: #03A9F4;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     padding-left: 15px;
-}
+  }
 
-    input::placeholder{
-        color: #03A9F4;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-    }
+  input::placeholder {
+    color: #03A9F4;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+  }
 
-    input:focus {
-        outline: none;
-        color: #03A9F4;
-    }
+  input:focus {
+    outline: none;
+    color: #03A9F4;
+  }
 
-    .span-title{
-        position: relative;
-        width: 259px;
-        height: 77px;
+  .span-title {
+    position: relative;
+    width: 259px;
+    height: 77px;
 
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 64px;
-        color: #E1F5FE;
-    }
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    color: #E1F5FE;
+  }
 
-.letra {
+  .letra {
     display: flex;
     text-align: center;
     justify-content: center;
     color: red;
     opacity: 50%;
     margin-top: 5px;
-}
+  }
 </style>
