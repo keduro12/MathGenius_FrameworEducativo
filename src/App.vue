@@ -21,7 +21,7 @@ import DividePage from '@/pages/DividePage.vue';
 </div>
 
 
-<div v-else-if="$route.name=='NotFound'">
+<div v-else-if="$route.name=='NoFound'">
     <router-view></router-view>
 </div>
 
