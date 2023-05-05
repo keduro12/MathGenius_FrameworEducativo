@@ -6,13 +6,15 @@
         :body="item.body"
         :body_2="item.body_2"
         :url="item.url"
+        :url_2="item.url_2"
         ></ContentAddition>
 
-        <div v-if="final == 7">
+        <div v-if="final == 8">
             <Quiz></Quiz>
+            <!-- <button class="back" v-on:click="module">Modulos</button> -->
         </div>
         <div>
-            <button class="next" v-on:click="siguiente" v-if="final != 7">Siguiente</button>
+            <button class="next" v-on:click="siguiente" v-if="final != 8">Siguiente</button>
             <button class="back" v-on:click="atras">Atras</button>
 
         </div>
@@ -23,15 +25,11 @@
 import ContentAddition from "@/pages/ContentAddition.vue";
 import Quiz from "@/components/Quiz.vue";
 import Suma from "@/content/Modulos.js"
-import Imagenes from "@/content/imagenesSuma.js"
 
-import {ref, reactive} from "vue"
+import {ref} from "vue"
 import { useRouter } from "vue-router";
 
 const sumar = Suma.Suma;
-const imagenes = Imagenes.Imagenes;
-
-console.log(imagenes)
 
 const router = useRouter();
 
@@ -41,7 +39,7 @@ const router = useRouter();
     const siguiente = () => {
         inicio.value++;
         final.value++
-        if (inicio.value == 7 && final.value == 8) {
+        if (inicio.value == 8 && final.value == 9) {
             router.push('/module');
         }
     }
@@ -54,6 +52,15 @@ const router = useRouter();
             router.push('/module');
         }
     }
+
+    // const module = () => {
+    //     inicio.value--;
+    //     final.value--;
+
+    //     if (final.value == 7) {
+    //         router.push('/module');
+    //     }
+    // }
 
     // const entrada = ref([]);
 </script>

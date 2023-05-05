@@ -6,10 +6,15 @@
         :body="item.body"
         :body_2="item.body_2"
         :url="item.url"
+        :url_2="item.url_2"
         ></ContentMultiplication>
 
+        <div v-if="final == 8">
+            <QuizMultiplication></QuizMultiplication>
+        </div>
+
         <div>
-            <button class="next" v-on:click="siguiente">Siguiente</button>
+            <button class="next" v-on:click="siguiente" v-if="final != 8">Siguiente</button>
             <button class="back" v-on:click="atras">Atras</button>
 
         </div>
@@ -19,6 +24,7 @@
 <script setup>
 import ContentMultiplication from "@/pages/ContentMultiplication.vue";
 import Multiplicacion from "@/content/Modulos.js"
+import QuizMultiplication from "@/components/QuizMultiplication.vue";
 
 import {ref} from "vue"
 import { useRouter } from "vue-router";
@@ -34,7 +40,7 @@ const router = useRouter();
 
         inicio.value++;
         final.value++
-        if (inicio.value == 7 && final.value == 8) {
+        if (inicio.value == 8 && final.value == 9) {
             router.push('/module');
         }
     }

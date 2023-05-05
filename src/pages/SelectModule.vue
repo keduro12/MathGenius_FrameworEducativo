@@ -30,9 +30,6 @@
                             <img src="@/assets/division.jpg" alt="división">
                         </div>
                     </router-link>
-                    {{ use.roles }}
-
-
                 </div>
             </div>
             <button class="back" v-on:click="atras">Inicio</button>

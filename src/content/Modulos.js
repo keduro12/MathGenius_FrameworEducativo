@@ -44,6 +44,9 @@ const Suma = [{
         url: "https://slideplayer.es/slide/9810285/31/images/3/Propiedad+de+identidad+%28o+del+cero%29.jpg",
 
     },
+    {
+        url_2: "https://www.youtube.com/embed/sahheRPwbZ8",
+    },
 
 ]
 
@@ -98,6 +101,9 @@ const Resta = [
         body: "Propiedad distributiva de la Resta: la resta es distributiva con respecto a la suma, lo que significa que se pueden restar dos números y luego sumar el resultado a otro número, o sumar primero dos números y luego restar el resultado de otro número. Es decir, a - (b + c) = (a - b) - c y (a + b) - c = a - (c - b).",
         url: "https://i.ytimg.com/vi/4MPTIyOKFl0/maxresdefault.jpg",
 
+    },
+    {
+        url_2: "https://www.youtube.com/embed/OAr0Q1R1bCA",
     },
 
 ]
@@ -155,6 +161,9 @@ const Multiplicacion = [
         body: "La propiedad del cero: es una propiedad básica de la multiplicación que establece que el producto de cualquier número por cero es igual a cero. Formalmente, esta propiedad se puede expresar de la siguiente manera: a x 0 = 0 x a = 0",
         url: "https://static.wixstatic.com/media/5826ca_d51ca45d0c4949c197115e2af2173c24~mv2.jpg/v1/fill/w_300,h_200,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/5826ca_d51ca45d0c4949c197115e2af2173c24~mv2.jpg",
 
+    },
+    {
+        url_2: "https://www.youtube.com/embed/bxMBwdWXvKk",
     },
 
 ]
@@ -217,6 +226,9 @@ const Division = [
         body: "Propiedad del cociente y del resto: Esta propiedad establece que cuando se divide un número entero por otro, el resultado puede expresarse como el cociente y el resto. Es decir, si a y b son dos números enteros con b ≠ 0, entonces existe un cociente q y un resto r tales que a = bq + r, donde 0 ≤ r < b. Esta propiedad se utiliza a menudo para realizar divisiones largas y para encontrar los divisores comunes de dos números.",
         url: "https://www.calculadoraconversor.com/wp-content/uploads/2014/08/partes-de-una-division.jpg",
 
+    },
+    {
+        url_2: "https://www.youtube.com/embed/AX_4QZ_gAOU",
     },
 
 ]

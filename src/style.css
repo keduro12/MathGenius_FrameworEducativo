@@ -122,3 +122,28 @@ html, body {
     background: #03A9F4;
     border-bottom: 6px solid #01579b;
 }
+
+
+.classvideo{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+iframe{
+    border-radius: 15px;
+}
+.div-padre{
+    height: 100vh;
+}
+
+img {
+    width: 30%;
+    height: 350px;
+    text-align: center;
+    margin-top: 2%;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.imagen {
+    text-align: center;
+}

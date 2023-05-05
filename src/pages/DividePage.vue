@@ -6,10 +6,15 @@
         :body="item.body"
         :body_2="item.body_2"
         :url="item.url"
+        :url_2="item.url_2"
         ></ContentDivide>
 
+        <div v-if="final == 9">
+            <QuizDivide></QuizDivide>
+        </div>
+
         <div>
-            <button class="next" v-on:click="siguiente">Siguiente</button>
+            <button class="next" v-on:click="siguiente" v-if="final != 9">Siguiente</button>
             <button class="back" v-on:click="atras">Atras</button>
 
         </div>
@@ -19,6 +24,7 @@
 <script setup>
 import ContentDivide from "@/pages/ContentDivide.vue";
 import Division from "@/content/Modulos.js"
+import QuizDivide from "@/components/QuizDivide.vue";
 
 import {ref} from "vue"
 import { useRouter } from "vue-router";
@@ -34,7 +40,7 @@ const router = useRouter();
 
         inicio.value++;
         final.value++
-        if (inicio.value == 8 && final.value == 9) {
+        if (inicio.value == 9 && final.value == 10) {
             router.push('/module');
         }
     }
@@ -44,7 +50,7 @@ const router = useRouter();
         final.value--;
 
         if (inicio.value == -1 && final.value == 0) {
-            router.push('/knowbody');
+            router.push('/module');
         }
     }
 </script>

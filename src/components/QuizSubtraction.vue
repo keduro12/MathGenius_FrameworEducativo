@@ -16,7 +16,7 @@
                 <div class="modal-body">
                     <div class="centrar">
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_1.png" alt="">
+                            <img src="@/assets/resta/resta_1.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_1">
                             </span>
@@ -24,7 +24,7 @@
                         <hr>
 
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_2.png" alt="">
+                            <img src="@/assets/resta/resta_2.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_2">
                             </span>
@@ -32,7 +32,7 @@
                         <hr>
 
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_3.png" alt="">
+                            <img src="@/assets/resta/resta_3.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_3">
                             </span>
@@ -40,7 +40,7 @@
                         <hr>
 
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_4.png" alt="">
+                            <img src="@/assets/resta/resta_4.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_4">
                             </span>
@@ -48,7 +48,7 @@
                         <hr>
 
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_5.png" alt="">
+                            <img src="@/assets/resta/resta_5.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_5"> 
                             </span>
@@ -56,7 +56,7 @@
                         <hr>
 
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_6.png" alt="">
+                            <img src="@/assets/resta/resta_6.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_6">
                             </span>
@@ -64,7 +64,7 @@
                         <hr>
 
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_7.png" alt="">
+                            <img src="@/assets/resta/resta_7.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_7">
                             </span>
@@ -72,7 +72,7 @@
                         <hr>
 
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_8.png" alt="">
+                            <img src="@/assets/resta/resta_8.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_8">
                             </span>
@@ -80,14 +80,14 @@
                         <hr>
 
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_9.png" alt="">
+                            <img src="@/assets/resta/resta_9.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_9">
                             </span>
                         </div>
                         <hr>
                         <div class="contenedor">
-                            <img src="@/assets/suma/suma_10.png" alt="">
+                            <img src="@/assets/resta/resta_10.png" alt="">
                             <span>
                                 <input type="number" class="input-class" v-model.trim="entrada_10">
                             </span>
@@ -145,8 +145,8 @@ const Toast = Swal.mixin({
     const entrada_9 = ref()
     const entrada_10 = ref()
 
-    const ramdom = ref()
-    const aleatorio = ref([])
+    // const ramdom = ref()
+    // const aleatorio = ref([])
 
 
 
@@ -158,21 +158,21 @@ const Toast = Swal.mixin({
     
     // }
 
-    // console.log(aleatorio.value + "esto e slo aleatorio")
+    // console.log(aleatorio.value + "esto e slo aleatorresta
 
-    const suma_1 = 645;
-    const suma_2 = 1306;
-    const suma_3 = 933;
-    const suma_4 = 407;
-    const suma_5 = 775;
-    const suma_6 = 296;
-    const suma_7 = 858;
-    const suma_8 = 786;
-    const suma_9 = 969;
-    const suma_10 = 361;
+    const resta_1 = 181;
+    const resta_2 = 194;
+    const resta_3 = 29;
+    const resta_4 = 295;
+    const resta_5 = 340;
+    const resta_6 = 297;
+    const resta_7 = 382;
+    const resta_8 = 4;
+    const resta_9 = 340;
+    const resta_10 = 125;
 
     const validar = () =>{
-        if(entrada_1.value == suma_1 && entrada_2.value == suma_2 &&  entrada_3.value == suma_3 && entrada_4.value == suma_4 && entrada_5.value == suma_5 && entrada_6.value == suma_6 && entrada_7.value == suma_7 && entrada_8.value == suma_8 && entrada_9.value == suma_9 && entrada_10.value == suma_10){
+        if(entrada_1.value == resta_1 && entrada_2.value == resta_2 &&  entrada_3.value == resta_3 && entrada_4.value == resta_4 && entrada_5.value == resta_5 && entrada_6.value == resta_6 && entrada_7.value == resta_7 && entrada_8.value == resta_8 && entrada_9.value == resta_9 && entrada_10.value == resta_10){
             Toast.fire({
                 position: 'bottom',
                 icon: 'success',
